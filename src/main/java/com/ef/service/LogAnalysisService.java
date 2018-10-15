@@ -1,8 +1,8 @@
-package com.wallethubex.ex.loganalysis.service;
+package com.ef.service;
 
 
-import com.wallethubex.ex.loganalysis.entity.BlockedIp;
-import com.wallethubex.ex.loganalysis.repository.BlockIpRepository;
+import com.ef.entity.BlockedIp;
+import com.ef.repository.BlockIpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

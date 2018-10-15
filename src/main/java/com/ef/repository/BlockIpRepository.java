@@ -1,6 +1,6 @@
-package com.wallethubex.ex.loganalysis.repository;
+package com.ef.repository;
 
-import com.wallethubex.ex.loganalysis.entity.BlockedIp;
+import com.ef.entity.BlockedIp;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -19,7 +19,7 @@ public interface BlockIpRepository extends JpaRepository<BlockedIp, Long> {
     @Modifying
     @Query(value = "INSERT INTO BlockedIp(ip, comments) "
             + "SELECT log.ipAddress, "
-            + "CONCAT('Exceeded threshold(',:threshold,').  Requests amount: ', count(*)) AS comments "
+            + "CONCAT('Exceeded threshold(',:threshold,').  Number of request: ', count(*)) AS comments "
             + "FROM AccessLog log "
             + "WHERE log.date BETWEEN :fromDate AND :toDate "
             + "GROUP BY log.ipAddress "

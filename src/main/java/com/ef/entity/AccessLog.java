@@ -1,4 +1,4 @@
-package com.wallethubex.ex.loganalysis.entity;
+package com.ef.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

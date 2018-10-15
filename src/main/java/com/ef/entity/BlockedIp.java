@@ -1,15 +1,11 @@
-package com.wallethubex.ex.loganalysis.entity;
+package com.ef.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -23,6 +19,8 @@ public class BlockedIp {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
+    @Column(name = "IP", nullable = false)
     public String ip;
+    @Column(name = "COMMENTS", nullable = false)
     public String comments;
 }

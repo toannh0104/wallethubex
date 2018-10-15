@@ -1,7 +1,7 @@
-package com.wallethubex.ex.loganalysis;
+package com.ef;
 
-import com.wallethubex.ex.loganalysis.entity.AccessLog;
-import com.wallethubex.ex.loganalysis.service.AccessLogService;
+import com.ef.entity.AccessLog;
+import com.ef.service.AccessLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,9 @@ public class FileParser {
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
     public void importAccessLog(File logFile) throws IOException {
+        if(logFile == null) return;
         List<String> lines = Files.readAllLines(Paths.get(logFile.toURI()));
+        //if(lines.size() >= 116484) return;
         lines.forEach(line -> {
             String[] arr = line.split("\\|");
             LocalDateTime dd = LocalDateTime.parse(arr[DATE_INDEX], TIME_FORMATTER);

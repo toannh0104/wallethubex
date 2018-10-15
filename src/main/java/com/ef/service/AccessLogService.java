@@ -1,7 +1,7 @@
-package com.wallethubex.ex.loganalysis.service;
+package com.ef.service;
 
-import com.wallethubex.ex.loganalysis.entity.AccessLog;
-import com.wallethubex.ex.loganalysis.repository.AccessLogRepository;
+import com.ef.entity.AccessLog;
+import com.ef.repository.AccessLogRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

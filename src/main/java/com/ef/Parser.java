@@ -1,8 +1,8 @@
-package com.wallethubex.ex.loganalysis;
+package com.ef;
 
-import com.wallethubex.ex.loganalysis.entity.BlockedIp;
-import com.wallethubex.ex.loganalysis.service.LogAnalysisService;
-import com.wallethubex.ex.loganalysis.util.LogParserCli;
+import com.ef.entity.BlockedIp;
+import com.ef.service.LogAnalysisService;
+import com.ef.util.LogParserCli;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -16,14 +16,14 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
-public class LogAnalysisApplication {
+public class Parser {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(LogAnalysisApplication.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Parser.class);
 
 	public static void main(String[] args) {
 		LogParserCli logParser = LogParserCli.checkAgurments(args);
 		if (logParser.isArgsValid()) {
-			SpringApplication.run(LogAnalysisApplication.class, args);
+			SpringApplication.run(Parser.class, args);
 		} else {
 			logParser.showErrors();
 			LogParserCli.showArgsHelps();
